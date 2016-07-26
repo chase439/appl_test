@@ -1,0 +1,50 @@
+Q1 = OOP basics
+
+a. To Run Main: "ruby foobar.rb"
+
+b. To Run Test: "rspec foobar_spec.rb"
+
+Q2 = JavaScript
+
+Please open temperature.html in your browser.
+
+Q3 = System Automation
+
+>> Challenge A: find all .log files within /var/logs folder (including within nested subfolders etc)
+
+# Since I created var/logs for testing, you could replace var/logs with /var/logs.
+$ find var/logs -name *.log
+var/logs/0a.log
+var/logs/0b.log
+var/logs/a1/1a.log
+var/logs/a1/1b.log
+var/logs/a1/a11/11a.log
+var/logs/a1/a11/11b.log
+
+>> Challenge B: output contents of every log file, using one shell liner
+
+tail -n +1 $(find var/logs -name *.log)  # print filename and line 1 till end of file
+#OR
+find var/logs -name *.log -print -exec cat {} \; # -print before the -exec prints the filename
+
+>> Challenge C: output lines containing timestamps of form 'YYYY-MM-DD HH:MM:SS'
+
+egrep -r "[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}" var/logs
+# NOTE: Due to OSX grep not matching regex like Linux grep, egrep is used.
+
+Q4 = Delivery
+
+i. What does the term "deployability" mean to you?
+
+Deployability means the code is production ready. In
+version control system, we want the master branch to
+be deployable at all times. If a bug come up, we 
+should be able to put a fix into master branch and 
+deploy to production right away.
+
+ii. As a developer, what can you do to make your RoR applications "highly deployable”?
+
+To make an app highly deployable, automated tests
+need to be written. The higher the test coverage, 
+the higher the assurance that the app will work 
+without issues in production.
