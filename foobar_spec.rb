@@ -6,7 +6,7 @@
 require "./foobar"
 
 describe "Foobar" do
-  subject { Foobar.new }
+  subject { Foobar }
   let(:error_msg) { "Not an Integer" }
 
   context "when inputs are bad" do 
