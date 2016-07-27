@@ -1,16 +1,16 @@
 $(document).ready(function() {
-  fah = $("#fah");
-  cel = $("#cel");
+  var fah_node = $("#fah");
+  var cel_node = $("#cel");
 
-  fah.on("change", function() {
-    print_result(cel, (fah.val() - 32) * 5/9);
+  fah_node.on("change", function() {
+    print_result(cel_node, (this.value - 32) * 5/9);
   });
-  cel.on("change", function() {
-    print_result(fah, cel.val() * 9/5 + 32);
+  cel_node.on("change", function() {
+    print_result(fah_node, this.value * 9/5 + 32);
   });
 
   function print_result(target, result) {
-    result2 = isNaN(result) ? "Not A Number" : result.toFixed(2);
-    target.val(result2);
+    var finalResult = isNaN(result) ? "Not A Number" : result.toFixed(2);
+    target.val(finalResult);
   }
 });
