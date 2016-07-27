@@ -21,7 +21,7 @@ var/logs/a1/1b.log
 var/logs/a1/a11/11a.log
 var/logs/a1/a11/11b.log
 
->> Challenge B: output contents of every log file, using one shell liner
+>> Challenge B: output contents of every log file, using shell one liner
 
 tail -n +1 $(find var/logs -name *.log)  # print filename and line 1 till end of file
 #OR
@@ -37,9 +37,9 @@ Q4 = Delivery
 i. What does the term "deployability" mean to you?
 
 Deployability means the code is production ready. In
-version control system, we want the master branch to
-be deployable at all times. If a bug come up, we 
-should be able to put a fix into master branch and 
+the version control system, we want the master branch
+to be deployable at all times. If a bug comes up, we
+should be able to put a fix into the master branch and
 deploy to production right away.
 
 ii. As a developer, what can you do to make your RoR applications "highly deployable”?
@@ -48,3 +48,16 @@ To make an app highly deployable, automated tests
 need to be written. The higher the test coverage, 
 the higher the assurance that the app will work 
 without issues in production.
+
+When readying code for deployment, data migration
+and precompile assets should also be tested
+in a staging environment that is as similar to
+the production environment as possible.
+This maximizes your chances of ferreting
+out any problems before deploying.
+
+Leveraging continuous integration tools such as
+Jenkins or Travis CI for the project also
+facilitates deployability, since it automates
+testing of every branch.
+
