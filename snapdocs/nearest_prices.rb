@@ -4,7 +4,8 @@
 # Description: Create a method that converts the prices array to
 #   its nearest array of integer values where the sum of the
 #   original array matches the sum of new array. See specs
-#   for examples.
+#   for examples. Price of $5.4 has higher precedent than price
+#   of $5.3 on being promoted to $6.
 # Assumption: all prices are float
 
 def solution(prices)
